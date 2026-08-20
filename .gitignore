@@ -1,0 +1,23 @@
+# build output
+dist/
+.astro/
+.vercel/
+
+# dependencies
+node_modules/
+
+# environment
+.env
+.env.production
+
+# system
+.DS_Store
+*.log
+
+# crawl cache — regenerate with `npm run crawl`
+_extract/html/
+_extract/live-dom/
+
+# one-off comparison reports and probes
+_extract/spot-*.json
+_extract/probe/

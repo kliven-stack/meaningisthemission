@@ -1,0 +1,395 @@
+---
+/**
+ * Growthmap lead forms (playbook §4b).
+ *
+ * Fully static: the browser POSTs FormData straight to `PUBLIC_CONTACT_ENDPOINT`,
+ * so the site needs no adapter and no serverless function. These replace the two
+ * LeadConnector ("Trustymail") iframes the WordPress pages embed:
+ *
+ *   chapter   — "Free Chapter Opt In", the popup every page opens five seconds
+ *               after load (600 × 768 at desktop)
+ *   speaking  — "Speaking Inquiry Form", inside the Elementor popup /speaking/
+ *               opens from its "Let's talk" button (980 × 966 at desktop)
+ *
+ * Field set, copy, placeholders, select options, consent text, colours, radii,
+ * paddings and per-row heights were all read off the live widgets with
+ * scripts/inspect-form.mjs and _extract/probe/. The widgets label nothing: every
+ * field is a placeholder with a trailing asterisk on the required ones. The clone
+ * keeps that look but adds a visually-hidden <label> per field, because a
+ * placeholder is not an accessible name.
+ *
+ * One deliberate difference from the widgets: they mark nothing `required`, so a
+ * blank submission reaches GoHighLevel and the asterisks are decoration. Ours use
+ * native validation on the fields the asterisks claim are required.
+ *
+ * With no endpoint configured the caller keeps the original embeds instead, so a
+ * deploy before the endpoint exists never ships a dead form.
+ */
+import { CONTACT_ENDPOINT } from '../config';
+
+interface Props {
+  variant: 'chapter' | 'speaking';
+  /**
+   * Which region this instance renders in. The opt-in popup appears on every page
+   * alongside /speaking/'s inquiry form, so the label/input ids have to differ.
+   */
+  region: string;
+}
+
+const { variant, region } = Astro.props as Props;
+
+/**
+ * The widgets' own fields, in their own order. The opaque names (`ittaP0Iwz…`) are
+ * GoHighLevel custom-field ids; they are kept as the wire names so a lead posted to
+ * Growthmap carries the same keys the WordPress site sent, and the labels travel
+ * alongside them.
+ */
+const FIELDS = {
+  chapter: [
+    { name: 'full_name', tag: 'input', type: 'text', label: 'Full Name', autocomplete: 'name', required: true },
+    { name: 'email', tag: 'input', type: 'email', label: 'Email', autocomplete: 'email', required: true, icon: 'mail' },
+  ],
+  speaking: [
+    { name: 'ittaP0IwzVvi8GtJwsxR', tag: 'input', type: 'text', label: 'Name of your event?' },
+    { name: 'event_date', tag: 'input', type: 'date', label: 'What day does your event start?' },
+    { name: 'O9qYw3uUT8Y7J0TrE6tz', tag: 'input', type: 'number', label: 'How many attendees are you expecting?' },
+    { name: '2INREMJaJhSsHJqkcQzy', tag: 'select', label: 'In Person', options: ['In Person', 'Virtual', 'Hybrid'] },
+    { name: 'IriY0qpuyxmUggJHrJXZ', tag: 'input', type: 'text', label: 'Where are you hosting your event?' },
+    { name: 'cnNlNSgmIbZMqRqEzey0', tag: 'textarea', label: 'What else should we know about your event?' },
+    { name: 'full_name', tag: 'input', type: 'text', label: 'Your Name', autocomplete: 'name', required: true },
+    { name: 'email', tag: 'input', type: 'email', label: 'Your Business Email Address', autocomplete: 'email', required: true, icon: 'mail' },
+    { name: 'phone', tag: 'input', type: 'tel', label: 'Your Phone Number', autocomplete: 'tel', required: true },
+  ],
+} as const;
+
+/** The copy the widgets print above their fields. */
+const COPY = {
+  chapter: {
+    formName: 'Free Chapter Opt In',
+    heading: 'Can I send you a free chapter from my book?',
+    intro: 'Discover the symptoms of success and how to get dreams done on purpose. Make it matter.',
+    kicker: null,
+    submit: 'SEND ME THE FREE CHAPTER',
+    consent: 'I agree to TeamOnUP terms of use & privacy policy. By providing my email, I agree to receive messages from the author.',
+  },
+  speaking: {
+    formName: 'Speaking Inquiry Form',
+    kicker: 'Book Mike Kelly',
+    heading: 'Want me to speak at your next event?',
+    intro: "Let's connect and see where our mission's align.",
+    submit: 'SUBMIT',
+    consent: 'I agree to TeamOnUP terms of use & privacy policy. By providing my contact info, I agree to receive messages from the author.',
+  },
+} as const;
+
+const fields = FIELDS[variant];
+const copy = COPY[variant];
+const id = (name: string) => `gm-${region}-${variant}-${name}`;
+---
+
+<div class:list={['gm-form', `gm-form--${variant}`]}>
+  <form
+    class="gm-form__form"
+    method="post"
+    action={CONTACT_ENDPOINT}
+    data-endpoint={CONTACT_ENDPOINT}
+    aria-labelledby={id('heading')}
+  >
+    <input type="hidden" name="form_name" value={copy.formName} />
+    <input type="hidden" name="source_page" value="" data-fill="path" />
+
+    {copy.kicker && <p class="gm-form__kicker">{copy.kicker}</p>}
+    <h2 class="gm-form__heading" id={id('heading')}>{copy.heading}</h2>
+    <p class="gm-form__intro">{copy.intro}</p>
+
+    {fields.map((field) => (
+      <div class:list={['gm-form__field', field.tag === 'textarea' && 'gm-form__field--area']}>
+        <label class="gm-form__label" for={id(field.name)}>{field.label}</label>
+        {field.tag === 'textarea' ? (
+          <textarea id={id(field.name)} name={field.name} placeholder={field.label} rows="4" />
+        ) : field.tag === 'select' ? (
+          /* The widget renders this as a searchable listbox whose resting state is
+             the first option shown as placeholder text. A native <select> is the
+             same choice with the same three values, keyboard-operable for free. */
+          <select id={id(field.name)} name={field.name} class="gm-form__select">
+            {field.options.map((option) => <option value={option}>{option}</option>)}
+          </select>
+        ) : (
+          <input
+            id={id(field.name)}
+            name={field.name}
+            type={field.type}
+            placeholder={field.required ? `${field.label}*` : field.label}
+            autocomplete={'autocomplete' in field ? field.autocomplete : undefined}
+            class:list={['icon' in field && `gm-form__input--${field.icon}`]}
+            required={'required' in field ? field.required : undefined}
+          />
+        )}
+      </div>
+    ))}
+
+    {/* Honeypot — hidden from people, irresistible to bots. */}
+    <div class="gm-form__hp" aria-hidden="true">
+      <label>
+        Website
+        <input type="text" name="website" tabindex="-1" autocomplete="off" />
+      </label>
+    </div>
+
+    <div class="gm-form__submit-row">
+      <button type="submit" class="gm-form__submit">{copy.submit}</button>
+    </div>
+
+    <div class="gm-form__consent">
+      <input type="checkbox" id={id('terms')} name="terms_and_conditions" value="terms_and_conditions" required />
+      <label for={id('terms')}>{copy.consent}</label>
+    </div>
+
+    <p class="gm-form__status" role="status" aria-live="polite"></p>
+  </form>
+</div>
+
+<style>
+  /* Geometry copied from the widgets: 41px field rows (45px for the phone row) with
+     a 16px gap, 10px/20px insets, 2px radii on the fields and 4px on the button,
+     Montserrat 14px for the inputs. Both widgets paint their own background, so the
+     form fills the box the popup gives it. */
+  .gm-form {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 30px 20px;
+    font-family: 'Montserrat', 'Lato', sans-serif;
+    color: #2f2e2e;
+  }
+
+  /* The speaking widget is 980px wide inside a 1000px popup container; the opt-in
+     popup is 600px wide. Both centre their column. */
+  .gm-form--speaking .gm-form__form { max-width: 738px; }
+  .gm-form--chapter .gm-form__form { max-width: 576px; }
+  .gm-form__form { box-sizing: border-box; margin: 0 auto; }
+
+  .gm-form__kicker {
+    margin: 0 0 4px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #0197ce;
+  }
+
+  .gm-form__heading {
+    margin: 0 0 8px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  .gm-form__intro {
+    margin: 0 0 24px;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .gm-form__field { margin-bottom: 16px; }
+
+  /* A placeholder is not an accessible name, so every field keeps a real label —
+     visually hidden, because the widget shows none. */
+  .gm-form__label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .gm-form__form input:not([type='checkbox']),
+  .gm-form__form select,
+  .gm-form__form textarea {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 10px 20px;
+    font-family: 'Montserrat', 'Lato', sans-serif;
+    font-size: 14px;
+    line-height: 21px;
+    color: #2f2e2e;
+    background: #eceef2;
+    border: 0;
+    border-radius: 2px;
+  }
+
+  .gm-form__form input::placeholder,
+  .gm-form__form textarea::placeholder {
+    color: #999;
+    opacity: 1;
+  }
+
+  /* The widget draws a mail glyph inside the email field and pads the text past it. */
+  .gm-form__input--mail {
+    padding-left: 36px !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='4' width='20' height='16' rx='2'/%3E%3Cpath d='m22 7-10 6L2 7'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 12px center;
+    background-size: 16px 16px;
+  }
+
+  .gm-form__form select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 16px 16px;
+    padding-right: 40px;
+  }
+
+  .gm-form__form textarea {
+    height: 108px;
+    resize: vertical;
+  }
+
+  .gm-form__form input:focus-visible,
+  .gm-form__form select:focus-visible,
+  .gm-form__form textarea:focus-visible {
+    outline: 2px solid #0197ce;
+    outline-offset: 1px;
+  }
+
+  /* `:user-invalid` rather than `:invalid`: an untouched required field is invalid
+     from the first paint, and must not be painted as an error. */
+  .gm-form__form input:user-invalid,
+  .gm-form__form textarea:user-invalid {
+    box-shadow: inset 0 0 0 1px #851577;
+  }
+
+  .gm-form__hp {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .gm-form__submit-row { margin-top: 15px; }
+
+  /* `:focus` is pinned to the resting look on purpose: the Hello theme styles every
+     bare `button:hover`/`:focus` with its own accent colour, which would repaint the
+     widget's purple. `:focus-visible` still shows. */
+  .gm-form__submit,
+  .gm-form__submit:hover,
+  .gm-form__submit:focus {
+    display: block;
+    width: 100%;
+    min-height: 52px;
+    padding: 10px 11px;
+    font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 25px;
+    color: #fff;
+    text-align: center;
+    background: #851577;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .gm-form__submit:hover { background: #752b8d; }
+  .gm-form__submit:focus-visible { outline: 2px solid #0197ce; outline-offset: 2px; }
+  .gm-form__submit[disabled] { opacity: 0.6; cursor: progress; }
+
+  .gm-form__consent {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    margin-top: 16px;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .gm-form__consent input { margin: 3px 0 0; flex: 0 0 auto; }
+
+  .gm-form__status {
+    margin: 12px 0 0;
+    min-height: 1.4em;
+    font-size: 14px;
+    color: inherit;
+  }
+
+  .gm-form__status[data-state='error'] { color: #851577; }
+  .gm-form__status[data-state='ok'] { color: #2f7d4f; }
+</style>
+
+<script>
+  /**
+   * Binds every unbound form under `root`.
+   *
+   * Called once for the document, and again for the Elementor popup on /speaking/ —
+   * its markup lives in a <template> until something opens it, which is what
+   * production does too, so the form inside it does not exist at load time.
+   */
+  function bindForms(root: ParentNode) {
+    for (const form of root.querySelectorAll<HTMLFormElement>('form.gm-form__form')) {
+      if (form.dataset.bound) continue;
+      form.dataset.bound = '1';
+
+      const status = form.querySelector<HTMLParagraphElement>('.gm-form__status')!;
+      const submit = form.querySelector<HTMLButtonElement>('.gm-form__submit')!;
+      const endpoint = form.dataset.endpoint || '';
+
+      form.querySelector<HTMLInputElement>('[data-fill="path"]')!.value = location.pathname;
+
+      const say = (message: string, state: 'ok' | 'error' | '') => {
+        status.textContent = message;
+        if (state) status.dataset.state = state;
+        else delete status.dataset.state;
+      };
+
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        say('', '');
+
+        if (!form.reportValidity()) return;
+
+        // A filled honeypot is a bot: show success, send nothing.
+        const honeypot = form.querySelector<HTMLInputElement>('input[name="website"]')!;
+        if (honeypot.value.trim()) {
+          form.reset();
+          say('Thanks — check your inbox shortly.', 'ok');
+          return;
+        }
+
+        if (!endpoint) {
+          say('This form is not connected yet. Please email us instead.', 'error');
+          return;
+        }
+
+        submit.disabled = true;
+        const original = submit.textContent;
+        submit.textContent = 'Sending…';
+
+        try {
+          const response = await fetch(endpoint, { method: 'POST', body: new FormData(form) });
+          if (!response.ok) throw new Error(`HTTP ${response.status}`);
+          form.reset();
+          say('Thanks — check your inbox shortly.', 'ok');
+        } catch {
+          say('Sorry, something went wrong. Please try again.', 'error');
+        } finally {
+          submit.disabled = false;
+          submit.textContent = original;
+        }
+      });
+    }
+  }
+
+  bindForms(document);
+  // src/scripts/elementor.js fires this after mounting a popup's markup.
+  document.addEventListener('gm:mounted', (event) => {
+    bindForms((event as CustomEvent<{ root: ParentNode }>).detail.root);
+  });
+</script>

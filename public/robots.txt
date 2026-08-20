@@ -1,0 +1,7 @@
+# The WordPress site's rules named paths that do not exist here: no /wp-admin/,
+# and no WPForms upload directory. What is left is "crawl everything", plus a
+# pointer at the sitemap the clone publishes (WordPress published none).
+User-agent: *
+Disallow:
+
+Sitemap: https://meaningisthemission.com/sitemap-index.xml

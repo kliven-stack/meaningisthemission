@@ -1,0 +1,47 @@
+/* Tailwind v4 — theme + utilities only, and only for the components we author.
+
+   Preflight is deliberately NOT imported: the cloned pages ship Elementor's own
+   compiled CSS from public/wp/css/, and a reset layered on top would change the
+   original rendering.
+
+   `source(none)` matters just as much. Tailwind's automatic content detection
+   scans every file in the project, including the ported WordPress fragments —
+   and WordPress class names collide with Tailwind utility names (`size-full` on
+   every full-size image figure, plus `hidden`, `container`, `block`, `table`,
+   `static`). Only our own components are scanned. */
+@layer theme, base, components, utilities;
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/utilities.css' layer(utilities) source(none);
+@source '../components';
+@source '../pages';
+
+@theme {
+  /* Elementor kit 6 global colours (public/wp/css/elementor-post-6.css) */
+  --color-brand-primary: #0197ce;
+  --color-brand-secondary: #000000;
+  --color-brand-text: #2f2e2e;
+  --color-brand-accent: #752b8d;
+  --color-brand-mist: #e2e2e2;
+  --color-brand-snow: #f3f3f3;
+  --color-brand-slate: #363636;
+  --color-brand-navy: #0f2e4d;
+
+  /* The LeadConnector widgets' own palette, matched by ContactForm.astro */
+  --color-field-bg: #eceef2;
+  --color-field-placeholder: #999999;
+  --color-form-submit: #851577;
+
+  /* Elementor kit typography globals */
+  --font-primary: 'Oswald', sans-serif;
+  --font-secondary: 'Oswald', sans-serif;
+  --font-text: 'Lato', sans-serif;
+  --font-accent: 'Oswald', sans-serif;
+  --font-form: 'Montserrat', sans-serif;
+
+  /* Elementor breakpoints — base is mobile, md = tablet, lg = desktop */
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1025px;
+
+  /* The kit's boxed-section width */
+  --container-elementor: 1140px;
+}

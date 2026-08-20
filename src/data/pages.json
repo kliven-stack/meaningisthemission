@@ -1,0 +1,1739 @@
+[
+  {
+    "slug": "404",
+    "path": "/404/",
+    "title": "Page not found – Meaning Is The Mission",
+    "description": null,
+    "robots": "noindex, nofollow",
+    "viewport": "width=device-width, initial-scale=1",
+    "hasProfileLink": true,
+    "hasCanonical": false,
+    "bodyClass": "error404 wp-custom-logo wp-embed-responsive wp-theme-hello-elementor wp-child-theme-hello-elementor-child hello-elementor-default elementor-default elementor-kit-6",
+    "lang": "en-US",
+    "hasSkipLink": true,
+    "header": "header-43-935ef877",
+    "footer": "footer-45-faf9caa5",
+    "popups": [],
+    "content": "page-404",
+    "css": [
+      {
+        "type": "file",
+        "name": "inline-wp-img-auto-sizes-contain-inline-e30bfec6"
+      },
+      {
+        "type": "file",
+        "name": "inline-wp-emoji-styles-inline-32d8f52d"
+      },
+      {
+        "type": "file",
+        "name": "wp-block-library"
+      },
+      {
+        "type": "file",
+        "name": "wpforms-gutenberg-form-selector"
+      },
+      {
+        "type": "file",
+        "name": "inline-global-styles-inline-4e1d3dcd"
+      },
+      {
+        "type": "file",
+        "name": "hello-elementor"
+      },
+      {
+        "type": "file",
+        "name": "hello-elementor-theme-style"
+      },
+      {
+        "type": "file",
+        "name": "hello-elementor-header-footer"
+      },
+      {
+        "type": "file",
+        "name": "elementor-frontend"
+      },
+      {
+        "type": "file",
+        "name": "elementor-post-6"
+      },
+      {
+        "type": "file",
+        "name": "widget-image"
+      },
+      {
+        "type": "file",
+        "name": "widget-nav-menu"
+      },
+      {
+        "type": "file",
+        "name": "e-sticky"
+      },
+      {
+        "type": "file",
+        "name": "widget-heading"
+      },
+      {
+        "type": "file",
+        "name": "widget-icon-list"
+      },
+      {
+        "type": "file",
+        "name": "e-animation-grow"
+      },
+      {
+        "type": "file",
+        "name": "widget-social-icons"
+      },
+      {
+        "type": "file",
+        "name": "e-apple-webkit"
+      },
+      {
+        "type": "file",
+        "name": "elementor-icons"
+      },
+      {
+        "type": "file",
+        "name": "uael-frontend"
+      },
+      {
+        "type": "file",
+        "name": "wpforms-full"
+      },
+      {
+        "type": "file",
+        "name": "uael-teammember-social-icons"
+      },
+      {
+        "type": "file",
+        "name": "uael-social-share-icons-brands"
+      },
+      {
+        "type": "file",
+        "name": "uael-social-share-icons-fontawesome"
+      },
+      {
+        "type": "file",
+        "name": "uael-nav-menu-icons"
+      },
+      {
+        "type": "file",
+        "name": "elementor-post-43"
+      },
+      {
+        "type": "file",
+        "name": "elementor-post-45"
+      },
+      {
+        "type": "file",
+        "name": "eael-general"
+      },
+      {
+        "type": "file",
+        "name": "chld_thm_cfg_child"
+      },
+      {
+        "type": "file",
+        "name": "elementor-gf-oswald"
+      },
+      {
+        "type": "file",
+        "name": "elementor-gf-lato"
+      },
+      {
+        "type": "file",
+        "name": "elementor-icons-shared-0"
+      },
+      {
+        "type": "file",
+        "name": "elementor-icons-fa-brands"
+      },
+      {
+        "type": "file",
+        "name": "inline-anon-e13b03c5"
+      },
+      {
+        "type": "file",
+        "name": "inline-wp-custom-70b5e3e6"
+      }
+    ],
+    "favicons": [
+      {
+        "rel": "icon",
+        "href": "/wp-content/uploads/2024/03/logo-purple-background.svg",
+        "sizes": null,
+        "type": "image/png"
+      },
+      {
+        "rel": "icon",
+        "href": "/wp-content/uploads/2024/03/logo-purple-background.svg",
+        "sizes": "32x32",
+        "type": null
+      },
+      {
+        "rel": "icon",
+        "href": "/wp-content/uploads/2024/03/logo-purple-background.svg",
+        "sizes": "192x192",
+        "type": null
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "/wp-content/uploads/2024/03/logo-purple-background.svg",
+        "sizes": null,
+        "type": null
+      }
+    ],
+    "tile": "/wp-content/uploads/2024/03/logo-purple-background.svg",
+    "seoHead": ""
+  },
+  {
+    "slug": "author__admin",
+    "path": "/author/admin/",
+    "title": "admin – Meaning Is The Mission",
+    "description": null,
+    "robots": "noindex, nofollow",
+    "viewport": "width=device-width, initial-scale=1",
+    "hasProfileLink": true,
+    "hasCanonical": false,
+    "bodyClass": "archive author author-admin author-1 wp-custom-logo wp-embed-responsive wp-theme-hello-elementor wp-child-theme-hello-elementor-child hello-elementor-default elementor-default elementor-kit-6",
+    "lang": "en-US",
+    "hasSkipLink": true,
+    "header": "header-43-935ef877",
+    "footer": "footer-45-faf9caa5",
+    "popups": [],
+    "content": "page-author__admin",
+    "css": [
+      {
+        "type": "file",
+        "name": "inline-wp-img-auto-sizes-contain-inline-e30bfec6"
+      },
+      {
+        "type": "file",
+        "name": "inline-wp-emoji-styles-inline-32d8f52d"
+      },
+      {
+        "type": "file",
+        "name": "wp-block-library"
+      },
+      {
+        "type": "file",
+        "name": "wpforms-gutenberg-form-selector"
+      },
+      {
+        "type": "file",
+        "name": "inline-global-styles-inline-4e1d3dcd"
+      },
+      {
+        "type": "file",
+        "name": "hello-elementor"
+      },
+      {
+        "type": "file",
+        "name": "hello-elementor-theme-style"
+      },
+      {
+        "type": "file",
+        "name": "hello-elementor-header-footer"
+      },
+      {
+        "type": "file",
+        "name": "elementor-frontend"
+      },
+      {
+        "type": "file",
+        "name": "elementor-post-6"
+      },
+      {
+        "type": "file",
+        "name": "widget-image"
+      },
+      {
+        "type": "file",
+        "name": "widget-nav-menu"
+      },
+      {
+        "type": "file",
+        "name": "e-sticky"
+      },
+      {
+        "type": "file",
+        "name": "widget-heading"
+      },
+      {
+        "type": "file",
+        "name": "widget-icon-list"
+      },
+      {
+        "type": "file",
+        "name": "e-animation-grow"
+      },
+      {
+        "type": "file",
+        "name": "widget-social-icons"
+      },
+      {
+        "type": "file",
+        "name": "e-apple-webkit"
+      },
+      {
+        "type": "file",
+        "name": "elementor-icons"
+      },
+      {
+        "type": "file",
+        "name": "uael-frontend"
+      },
+      {
+        "type": "file",
+        "name": "wpforms-full"
+      },
+      {
+        "type": "file",
+        "name": "uael-teammember-social-icons"
+      },
+      {
+        "type": "file",
+        "name": "uael-social-share-icons-brands"
+      },
+      {
+        "type": "file",
+        "name": "uael-social-share-icons-fontawesome"
+      },
+      {
+        "type": "file",
+        "name": "uael-nav-menu-icons"
+      },
+      {
+        "type": "file",
+        "name": "elementor-post-43"
+      },
+      {
+        "type": "file",
+        "name": "elementor-post-45"
+      },
+      {
+        "type": "file",
+        "name": "eael-general"
+      },
+      {
+        "type": "file",
+        "name": "chld_thm_cfg_child"
+      },
+      {
+        "type": "file",
+        "name": "elementor-gf-oswald"
+      },
+      {
+        "type": "file",
+        "name": "elementor-gf-lato"
+      },
+      {
+        "type": "file",
+        "name": "elementor-icons-shared-0"
+      },
+      {
+        "type": "file",
+        "name": "elementor-icons-fa-brands"
+      },
+      {
+        "type": "file",
+        "name": "inline-anon-e13b03c5"
+      },
+      {
+        "type": "file",
+        "name": "inline-wp-custom-70b5e3e6"
+      }
+    ],
+    "favicons": [
+      {
+        "rel": "icon",
+        "href": "/wp-content/uploads/2024/03/logo-purple-background.svg",
+        "sizes": null,
+        "type": "image/png"
+      },
+      {
+        "rel": "icon",
+        "href": "/wp-content/uploads/2024/03/logo-purple-background.svg",
+        "sizes": "32x32",
+        "type": null
+      },
+      {
+        "rel": "icon",
+        "href": "/wp-content/uploads/2024/03/logo-purple-background.svg",
+        "sizes": "192x192",
+        "type": null
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "/wp-content/uploads/2024/03/logo-purple-background.svg",
+        "sizes": null,
+        "type": null
+      }
+    ],
+    "tile": "/wp-content/uploads/2024/03/logo-purple-background.svg",
+    "seoHead": ""
+  },
+  {
+    "slug": "category__uncategorized",
+    "path": "/category/uncategorized/",
+    "title": "Uncategorized – Meaning Is The Mission",
+    "description": null,
+    "robots": "noindex, nofollow",
+    "viewport": "width=device-width, initial-scale=1",
+    "hasProfileLink": true,
+    "hasCanonical": false,
+    "bodyClass": "archive category category-uncategorized category-1 wp-custom-logo wp-embed-responsive wp-theme-hello-elementor wp-child-theme-hello-elementor-child hello-elementor-default elementor-default elementor-kit-6",
+    "lang": "en-US",
+    "hasSkipLink": true,
+    "header": "header-43-935ef877",
+    "footer": "footer-45-faf9caa5",
+    "popups": [],
+    "content": "page-category__uncategorized",
+    "css": [
+      {
+        "type": "file",
+        "name": "inline-wp-img-auto-sizes-contain-inline-e30bfec6"
+      },
+      {
+        "type": "file",
+        "name": "inline-wp-emoji-styles-inline-32d8f52d"
+      },
+      {
+        "type": "file",
+        "name": "wp-block-library"
+      },
+      {
+        "type": "file",
+        "name": "wpforms-gutenberg-form-selector"
+      },
+      {
+        "type": "file",
+        "name": "inline-global-styles-inline-4e1d3dcd"
+      },
+      {
+        "type": "file",
+        "name": "hello-elementor"
+      },
+      {
+        "type": "file",
+        "name": "hello-elementor-theme-style"
+      },
+      {
+        "type": "file",
+        "name": "hello-elementor-header-footer"
+      },
+      {
+        "type": "file",
+        "name": "elementor-frontend"
+      },
+      {
+        "type": "file",
+        "name": "elementor-post-6"
+      },
+      {
+        "type": "file",
+        "name": "widget-image"
+      },
+      {
+        "type": "file",
+        "name": "widget-nav-menu"
+      },
+      {
+        "type": "file",
+        "name": "e-sticky"
+      },
+      {
+        "type": "file",
+        "name": "widget-heading"
+      },
+      {
+        "type": "file",
+        "name": "widget-icon-list"
+      },
+      {
+        "type": "file",
+        "name": "e-animation-grow"
+      },
+      {
+        "type": "file",
+        "name": "widget-social-icons"
+      },
+      {
+        "type": "file",
+        "name": "e-apple-webkit"
+      },
+      {
+        "type": "file",
+        "name": "elementor-icons"
+      },
+      {
+        "type": "file",
+        "name": "uael-frontend"
+      },
+      {
+        "type": "file",
+        "name": "wpforms-full"
+      },
+      {
+        "type": "file",
+        "name": "uael-teammember-social-icons"
+      },
+      {
+        "type": "file",
+        "name": "uael-social-share-icons-brands"
+      },
+      {
+        "type": "file",
+        "name": "uael-social-share-icons-fontawesome"
+      },
+      {
+        "type": "file",
+        "name": "uael-nav-menu-icons"
+      },
+      {
+        "type": "file",
+        "name": "elementor-post-43"
+      },
+      {
+        "type": "file",
+        "name": "elementor-post-45"
+      },
+      {
+        "type": "file",
+        "name": "eael-general"
+      },
+      {
+        "type": "file",
+        "name": "chld_thm_cfg_child"
+      },
+      {
+        "type": "file",
+        "name": "elementor-gf-oswald"
+      },
+      {
+        "type": "file",
+        "name": "elementor-gf-lato"
+      },
+      {
+        "type": "file",
+        "name": "elementor-icons-shared-0"
+      },
+      {
+        "type": "file",
+        "name": "elementor-icons-fa-brands"
+      },
+      {
+        "type": "file",
+        "name": "inline-anon-e13b03c5"
+      },
+      {
+        "type": "file",
+        "name": "inline-wp-custom-70b5e3e6"
+      }
+    ],
+    "favicons": [
+      {
+        "rel": "icon",
+        "href": "/wp-content/uploads/2024/03/logo-purple-background.svg",
+        "sizes": null,
+        "type": "image/png"
+      },
+      {
+        "rel": "icon",
+        "href": "/wp-content/uploads/2024/03/logo-purple-background.svg",
+        "sizes": "32x32",
+        "type": null
+      },
+      {
+        "rel": "icon",
+        "href": "/wp-content/uploads/2024/03/logo-purple-background.svg",
+        "sizes": "192x192",
+        "type": null
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "/wp-content/uploads/2024/03/logo-purple-background.svg",
+        "sizes": null,
+        "type": null
+      }
+    ],
+    "tile": "/wp-content/uploads/2024/03/logo-purple-background.svg",
+    "seoHead": ""
+  },
+  {
+    "slug": "index",
+    "path": "/",
+    "title": "Meaning Is The Mission – Understand the symptoms of success and how to get dreams done on purpose. Get the book Meaning Is The Mission by author Mike Kelly, CEO and Founder of TeamOnUP.",
+    "description": null,
+    "robots": "noindex, nofollow",
+    "viewport": "width=device-width, initial-scale=1.0, viewport-fit=cover",
+    "hasProfileLink": false,
+    "hasCanonical": true,
+    "bodyClass": "home wp-singular page-template page-template-elementor_canvas page page-id-32 wp-custom-logo wp-embed-responsive wp-theme-hello-elementor wp-child-theme-hello-elementor-child hello-elementor-default elementor-default elementor-template-canvas elementor-kit-6 elementor-page elementor-page-32",
+    "lang": "en-US",
+    "hasSkipLink": false,
+    "header": null,
+    "footer": null,
+    "popups": [],
+    "content": "page-index",
+    "css": [
+      {
+        "type": "file",
+        "name": "inline-wp-img-auto-sizes-contain-inline-e30bfec6"
+      },
+      {
+        "type": "file",
+        "name": "inline-wp-emoji-styles-inline-32d8f52d"
+      },
+      {
+        "type": "file",
+        "name": "wpforms-gutenberg-form-selector"
+      },
+      {
+        "type": "file",
+        "name": "inline-global-styles-inline-cb0158d3"
+      },
+      {
+        "type": "file",
+        "name": "hello-elementor"
+      },
+      {
+        "type": "file",
+        "name": "hello-elementor-theme-style"
+      },
+      {
+        "type": "file",
+        "name": "hello-elementor-header-footer"
+      },
+      {
+        "type": "file",
+        "name": "elementor-frontend"
+      },
+      {
+        "type": "file",
+        "name": "elementor-post-6"
+      },
+      {
+        "type": "file",
+        "name": "eael-general"
+      },
+      {
+        "type": "file",
+        "name": "eael-32"
+      },
+      {
+        "type": "file",
+        "name": "elementor-icons"
+      },
+      {
+        "type": "file",
+        "name": "inline-elementor-icons-inline-fc4583dd"
+      },
+      {
+        "type": "file",
+        "name": "uael-frontend"
+      },
+      {
+        "type": "file",
+        "name": "wpforms-full"
+      },
+      {
+        "type": "file",
+        "name": "uael-teammember-social-icons"
+      },
+      {
+        "type": "file",
+        "name": "uael-social-share-icons-brands"
+      },
+      {
+        "type": "file",
+        "name": "uael-social-share-icons-fontawesome"
+      },
+      {
+        "type": "file",
+        "name": "uael-nav-menu-icons"
+      },
+      {
+        "type": "file",
+        "name": "widget-image"
+      },
+      {
+        "type": "file",
+        "name": "widget-nav-menu"
+      },
+      {
+        "type": "file",
+        "name": "e-sticky"
+      },
+      {
+        "type": "file",
+        "name": "widget-heading"
+      },
+      {
+        "type": "file",
+        "name": "e-shapes"
+      },
+      {
+        "type": "file",
+        "name": "swiper"
+      },
+      {
+        "type": "file",
+        "name": "e-swiper"
+      },
+      {
+        "type": "file",
+        "name": "widget-icon-list"
+      },
+      {
+        "type": "file",
+        "name": "e-animation-grow"
+      },
+      {
+        "type": "file",
+        "name": "widget-social-icons"
+      },
+      {
+        "type": "file",
+        "name": "e-apple-webkit"
+      },
+      {
+        "type": "file",
+        "name": "elementor-post-32"
+      },
+      {
+        "type": "file",
+        "name": "font-awesome-5-all"
+      },
+      {
+        "type": "file",
+        "name": "font-awesome-4-shim"
+      },
+      {
+        "type": "file",
+        "name": "chld_thm_cfg_child"
+      },
+      {
+        "type": "file",
+        "name": "elementor-gf-oswald"
+      },
+      {
+        "type": "file",
+        "name": "elementor-gf-lato"
+      },
+      {
+        "type": "file",
+        "name": "elementor-icons-shared-0"
+      },
+      {
+        "type": "file",
+        "name": "elementor-icons-fa-brands"
+      },
+      {
+        "type": "file",
+        "name": "inline-anon-e13b03c5"
+      },
+      {
+        "type": "file",
+        "name": "inline-wp-custom-70b5e3e6"
+      }
+    ],
+    "favicons": [
+      {
+        "rel": "icon",
+        "href": "/wp-content/uploads/2024/03/logo-purple-background.svg",
+        "sizes": null,
+        "type": "image/png"
+      },
+      {
+        "rel": "icon",
+        "href": "/wp-content/uploads/2024/03/logo-purple-background.svg",
+        "sizes": "32x32",
+        "type": null
+      },
+      {
+        "rel": "icon",
+        "href": "/wp-content/uploads/2024/03/logo-purple-background.svg",
+        "sizes": "192x192",
+        "type": null
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "/wp-content/uploads/2024/03/logo-purple-background.svg",
+        "sizes": null,
+        "type": null
+      }
+    ],
+    "tile": "/wp-content/uploads/2024/03/logo-purple-background.svg",
+    "seoHead": ""
+  },
+  {
+    "slug": "privacy-policy",
+    "path": "/privacy-policy/",
+    "title": "Privacy Policy – Meaning Is The Mission",
+    "description": null,
+    "robots": "noindex, nofollow",
+    "viewport": "width=device-width, initial-scale=1",
+    "hasProfileLink": true,
+    "hasCanonical": true,
+    "bodyClass": "privacy-policy wp-singular page-template page-template-elementor_header_footer page page-id-3 wp-custom-logo wp-embed-responsive wp-theme-hello-elementor wp-child-theme-hello-elementor-child hello-elementor-default elementor-default elementor-template-full-width elementor-kit-6 elementor-page elementor-page-3",
+    "lang": "en-US",
+    "hasSkipLink": true,
+    "header": "header-43-935ef877",
+    "footer": "footer-45-faf9caa5",
+    "popups": [],
+    "content": "page-privacy-policy",
+    "css": [
+      {
+        "type": "file",
+        "name": "inline-wp-img-auto-sizes-contain-inline-e30bfec6"
+      },
+      {
+        "type": "file",
+        "name": "inline-wp-emoji-styles-inline-32d8f52d"
+      },
+      {
+        "type": "file",
+        "name": "wp-block-library"
+      },
+      {
+        "type": "file",
+        "name": "wpforms-gutenberg-form-selector"
+      },
+      {
+        "type": "file",
+        "name": "inline-global-styles-inline-cb0158d3"
+      },
+      {
+        "type": "file",
+        "name": "hello-elementor"
+      },
+      {
+        "type": "file",
+        "name": "hello-elementor-theme-style"
+      },
+      {
+        "type": "file",
+        "name": "hello-elementor-header-footer"
+      },
+      {
+        "type": "file",
+        "name": "elementor-frontend"
+      },
+      {
+        "type": "file",
+        "name": "elementor-post-6"
+      },
+      {
+        "type": "file",
+        "name": "widget-image"
+      },
+      {
+        "type": "file",
+        "name": "widget-nav-menu"
+      },
+      {
+        "type": "file",
+        "name": "e-sticky"
+      },
+      {
+        "type": "file",
+        "name": "widget-heading"
+      },
+      {
+        "type": "file",
+        "name": "widget-icon-list"
+      },
+      {
+        "type": "file",
+        "name": "e-animation-grow"
+      },
+      {
+        "type": "file",
+        "name": "widget-social-icons"
+      },
+      {
+        "type": "file",
+        "name": "e-apple-webkit"
+      },
+      {
+        "type": "file",
+        "name": "elementor-icons"
+      },
+      {
+        "type": "file",
+        "name": "uael-frontend"
+      },
+      {
+        "type": "file",
+        "name": "wpforms-full"
+      },
+      {
+        "type": "file",
+        "name": "uael-teammember-social-icons"
+      },
+      {
+        "type": "file",
+        "name": "uael-social-share-icons-brands"
+      },
+      {
+        "type": "file",
+        "name": "uael-social-share-icons-fontawesome"
+      },
+      {
+        "type": "file",
+        "name": "uael-nav-menu-icons"
+      },
+      {
+        "type": "file",
+        "name": "elementor-post-3"
+      },
+      {
+        "type": "file",
+        "name": "elementor-post-43"
+      },
+      {
+        "type": "file",
+        "name": "elementor-post-45"
+      },
+      {
+        "type": "file",
+        "name": "eael-general"
+      },
+      {
+        "type": "file",
+        "name": "chld_thm_cfg_child"
+      },
+      {
+        "type": "file",
+        "name": "elementor-gf-oswald"
+      },
+      {
+        "type": "file",
+        "name": "elementor-gf-lato"
+      },
+      {
+        "type": "file",
+        "name": "elementor-icons-shared-0"
+      },
+      {
+        "type": "file",
+        "name": "elementor-icons-fa-brands"
+      },
+      {
+        "type": "file",
+        "name": "inline-anon-e13b03c5"
+      },
+      {
+        "type": "file",
+        "name": "inline-wp-custom-70b5e3e6"
+      }
+    ],
+    "favicons": [
+      {
+        "rel": "icon",
+        "href": "/wp-content/uploads/2024/03/logo-purple-background.svg",
+        "sizes": null,
+        "type": "image/png"
+      },
+      {
+        "rel": "icon",
+        "href": "/wp-content/uploads/2024/03/logo-purple-background.svg",
+        "sizes": "32x32",
+        "type": null
+      },
+      {
+        "rel": "icon",
+        "href": "/wp-content/uploads/2024/03/logo-purple-background.svg",
+        "sizes": "192x192",
+        "type": null
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "/wp-content/uploads/2024/03/logo-purple-background.svg",
+        "sizes": null,
+        "type": null
+      }
+    ],
+    "tile": "/wp-content/uploads/2024/03/logo-purple-background.svg",
+    "seoHead": ""
+  },
+  {
+    "slug": "speaking",
+    "path": "/speaking/",
+    "title": "Hire Mike To Speak – Meaning Is The Mission",
+    "description": null,
+    "robots": "noindex, nofollow",
+    "viewport": "width=device-width, initial-scale=1",
+    "hasProfileLink": true,
+    "hasCanonical": true,
+    "bodyClass": "wp-singular page-template-default page page-id-192 wp-custom-logo wp-embed-responsive wp-theme-hello-elementor wp-child-theme-hello-elementor-child hello-elementor-default elementor-default elementor-kit-6 elementor-page elementor-page-192",
+    "lang": "en-US",
+    "hasSkipLink": true,
+    "header": "header-43-935ef877",
+    "footer": "footer-45-faf9caa5",
+    "popups": [
+      "popup-210-09cdd7fb"
+    ],
+    "content": "page-speaking",
+    "css": [
+      {
+        "type": "file",
+        "name": "inline-wp-img-auto-sizes-contain-inline-e30bfec6"
+      },
+      {
+        "type": "file",
+        "name": "inline-wp-emoji-styles-inline-32d8f52d"
+      },
+      {
+        "type": "file",
+        "name": "wpforms-gutenberg-form-selector"
+      },
+      {
+        "type": "file",
+        "name": "inline-global-styles-inline-4e1d3dcd"
+      },
+      {
+        "type": "file",
+        "name": "hello-elementor"
+      },
+      {
+        "type": "file",
+        "name": "hello-elementor-theme-style"
+      },
+      {
+        "type": "file",
+        "name": "hello-elementor-header-footer"
+      },
+      {
+        "type": "file",
+        "name": "elementor-frontend"
+      },
+      {
+        "type": "file",
+        "name": "elementor-post-6"
+      },
+      {
+        "type": "file",
+        "name": "widget-image"
+      },
+      {
+        "type": "file",
+        "name": "widget-nav-menu"
+      },
+      {
+        "type": "file",
+        "name": "e-sticky"
+      },
+      {
+        "type": "file",
+        "name": "widget-heading"
+      },
+      {
+        "type": "file",
+        "name": "widget-icon-list"
+      },
+      {
+        "type": "file",
+        "name": "e-animation-grow"
+      },
+      {
+        "type": "file",
+        "name": "widget-social-icons"
+      },
+      {
+        "type": "file",
+        "name": "e-apple-webkit"
+      },
+      {
+        "type": "file",
+        "name": "e-popup"
+      },
+      {
+        "type": "file",
+        "name": "elementor-icons"
+      },
+      {
+        "type": "file",
+        "name": "uael-frontend"
+      },
+      {
+        "type": "file",
+        "name": "wpforms-full"
+      },
+      {
+        "type": "file",
+        "name": "uael-teammember-social-icons"
+      },
+      {
+        "type": "file",
+        "name": "uael-social-share-icons-brands"
+      },
+      {
+        "type": "file",
+        "name": "uael-social-share-icons-fontawesome"
+      },
+      {
+        "type": "file",
+        "name": "uael-nav-menu-icons"
+      },
+      {
+        "type": "file",
+        "name": "elementor-post-210"
+      },
+      {
+        "type": "file",
+        "name": "widget-divider"
+      },
+      {
+        "type": "file",
+        "name": "elementor-post-192"
+      },
+      {
+        "type": "file",
+        "name": "elementor-post-43"
+      },
+      {
+        "type": "file",
+        "name": "elementor-post-45"
+      },
+      {
+        "type": "file",
+        "name": "eael-general"
+      },
+      {
+        "type": "file",
+        "name": "chld_thm_cfg_child"
+      },
+      {
+        "type": "file",
+        "name": "elementor-gf-oswald"
+      },
+      {
+        "type": "file",
+        "name": "elementor-gf-lato"
+      },
+      {
+        "type": "file",
+        "name": "elementor-icons-shared-0"
+      },
+      {
+        "type": "file",
+        "name": "elementor-icons-fa-brands"
+      },
+      {
+        "type": "file",
+        "name": "inline-anon-e13b03c5"
+      },
+      {
+        "type": "file",
+        "name": "inline-wp-custom-70b5e3e6"
+      }
+    ],
+    "favicons": [
+      {
+        "rel": "icon",
+        "href": "/wp-content/uploads/2024/03/logo-purple-background.svg",
+        "sizes": null,
+        "type": "image/png"
+      },
+      {
+        "rel": "icon",
+        "href": "/wp-content/uploads/2024/03/logo-purple-background.svg",
+        "sizes": "32x32",
+        "type": null
+      },
+      {
+        "rel": "icon",
+        "href": "/wp-content/uploads/2024/03/logo-purple-background.svg",
+        "sizes": "192x192",
+        "type": null
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "/wp-content/uploads/2024/03/logo-purple-background.svg",
+        "sizes": null,
+        "type": null
+      }
+    ],
+    "tile": "/wp-content/uploads/2024/03/logo-purple-background.svg",
+    "seoHead": ""
+  },
+  {
+    "slug": "terms-of-use",
+    "path": "/terms-of-use/",
+    "title": "Terms of Use – Meaning Is The Mission",
+    "description": null,
+    "robots": "noindex, nofollow",
+    "viewport": "width=device-width, initial-scale=1",
+    "hasProfileLink": true,
+    "hasCanonical": true,
+    "bodyClass": "wp-singular page-template page-template-elementor_header_footer page page-id-47 wp-custom-logo wp-embed-responsive wp-theme-hello-elementor wp-child-theme-hello-elementor-child hello-elementor-default elementor-default elementor-template-full-width elementor-kit-6 elementor-page elementor-page-47",
+    "lang": "en-US",
+    "hasSkipLink": true,
+    "header": "header-43-935ef877",
+    "footer": "footer-45-faf9caa5",
+    "popups": [],
+    "content": "page-terms-of-use",
+    "css": [
+      {
+        "type": "file",
+        "name": "inline-wp-img-auto-sizes-contain-inline-e30bfec6"
+      },
+      {
+        "type": "file",
+        "name": "inline-wp-emoji-styles-inline-32d8f52d"
+      },
+      {
+        "type": "file",
+        "name": "wp-block-library"
+      },
+      {
+        "type": "file",
+        "name": "wpforms-gutenberg-form-selector"
+      },
+      {
+        "type": "file",
+        "name": "inline-global-styles-inline-cb0158d3"
+      },
+      {
+        "type": "file",
+        "name": "hello-elementor"
+      },
+      {
+        "type": "file",
+        "name": "hello-elementor-theme-style"
+      },
+      {
+        "type": "file",
+        "name": "hello-elementor-header-footer"
+      },
+      {
+        "type": "file",
+        "name": "elementor-frontend"
+      },
+      {
+        "type": "file",
+        "name": "elementor-post-6"
+      },
+      {
+        "type": "file",
+        "name": "widget-image"
+      },
+      {
+        "type": "file",
+        "name": "widget-nav-menu"
+      },
+      {
+        "type": "file",
+        "name": "e-sticky"
+      },
+      {
+        "type": "file",
+        "name": "widget-heading"
+      },
+      {
+        "type": "file",
+        "name": "widget-icon-list"
+      },
+      {
+        "type": "file",
+        "name": "e-animation-grow"
+      },
+      {
+        "type": "file",
+        "name": "widget-social-icons"
+      },
+      {
+        "type": "file",
+        "name": "e-apple-webkit"
+      },
+      {
+        "type": "file",
+        "name": "elementor-icons"
+      },
+      {
+        "type": "file",
+        "name": "uael-frontend"
+      },
+      {
+        "type": "file",
+        "name": "wpforms-full"
+      },
+      {
+        "type": "file",
+        "name": "uael-teammember-social-icons"
+      },
+      {
+        "type": "file",
+        "name": "uael-social-share-icons-brands"
+      },
+      {
+        "type": "file",
+        "name": "uael-social-share-icons-fontawesome"
+      },
+      {
+        "type": "file",
+        "name": "uael-nav-menu-icons"
+      },
+      {
+        "type": "file",
+        "name": "elementor-post-47"
+      },
+      {
+        "type": "file",
+        "name": "elementor-post-43"
+      },
+      {
+        "type": "file",
+        "name": "elementor-post-45"
+      },
+      {
+        "type": "file",
+        "name": "eael-general"
+      },
+      {
+        "type": "file",
+        "name": "chld_thm_cfg_child"
+      },
+      {
+        "type": "file",
+        "name": "elementor-gf-oswald"
+      },
+      {
+        "type": "file",
+        "name": "elementor-gf-lato"
+      },
+      {
+        "type": "file",
+        "name": "elementor-icons-shared-0"
+      },
+      {
+        "type": "file",
+        "name": "elementor-icons-fa-brands"
+      },
+      {
+        "type": "file",
+        "name": "inline-anon-e13b03c5"
+      },
+      {
+        "type": "file",
+        "name": "inline-wp-custom-70b5e3e6"
+      }
+    ],
+    "favicons": [
+      {
+        "rel": "icon",
+        "href": "/wp-content/uploads/2024/03/logo-purple-background.svg",
+        "sizes": null,
+        "type": "image/png"
+      },
+      {
+        "rel": "icon",
+        "href": "/wp-content/uploads/2024/03/logo-purple-background.svg",
+        "sizes": "32x32",
+        "type": null
+      },
+      {
+        "rel": "icon",
+        "href": "/wp-content/uploads/2024/03/logo-purple-background.svg",
+        "sizes": "192x192",
+        "type": null
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "/wp-content/uploads/2024/03/logo-purple-background.svg",
+        "sizes": null,
+        "type": null
+      }
+    ],
+    "tile": "/wp-content/uploads/2024/03/logo-purple-background.svg",
+    "seoHead": ""
+  },
+  {
+    "slug": "tools-sales-page",
+    "path": "/tools-sales-page/",
+    "title": "Look Inside The Book – Meaning Is The Mission",
+    "description": null,
+    "robots": "noindex, nofollow",
+    "viewport": "width=device-width, initial-scale=1",
+    "hasProfileLink": true,
+    "hasCanonical": true,
+    "bodyClass": "wp-singular page-template-default page page-id-138 wp-custom-logo wp-embed-responsive wp-theme-hello-elementor wp-child-theme-hello-elementor-child hello-elementor-default elementor-default elementor-kit-6 elementor-page elementor-page-138",
+    "lang": "en-US",
+    "hasSkipLink": true,
+    "header": "header-43-17738540",
+    "footer": "footer-45-faf9caa5",
+    "popups": [],
+    "content": "page-tools-sales-page",
+    "css": [
+      {
+        "type": "file",
+        "name": "inline-wp-img-auto-sizes-contain-inline-e30bfec6"
+      },
+      {
+        "type": "file",
+        "name": "inline-wp-emoji-styles-inline-32d8f52d"
+      },
+      {
+        "type": "file",
+        "name": "wpforms-gutenberg-form-selector"
+      },
+      {
+        "type": "file",
+        "name": "inline-global-styles-inline-cb0158d3"
+      },
+      {
+        "type": "file",
+        "name": "hello-elementor"
+      },
+      {
+        "type": "file",
+        "name": "hello-elementor-theme-style"
+      },
+      {
+        "type": "file",
+        "name": "hello-elementor-header-footer"
+      },
+      {
+        "type": "file",
+        "name": "elementor-frontend"
+      },
+      {
+        "type": "file",
+        "name": "elementor-post-6"
+      },
+      {
+        "type": "file",
+        "name": "widget-image"
+      },
+      {
+        "type": "file",
+        "name": "widget-nav-menu"
+      },
+      {
+        "type": "file",
+        "name": "e-sticky"
+      },
+      {
+        "type": "file",
+        "name": "widget-heading"
+      },
+      {
+        "type": "file",
+        "name": "widget-icon-list"
+      },
+      {
+        "type": "file",
+        "name": "e-animation-grow"
+      },
+      {
+        "type": "file",
+        "name": "widget-social-icons"
+      },
+      {
+        "type": "file",
+        "name": "e-apple-webkit"
+      },
+      {
+        "type": "file",
+        "name": "elementor-icons"
+      },
+      {
+        "type": "file",
+        "name": "uael-frontend"
+      },
+      {
+        "type": "file",
+        "name": "wpforms-full"
+      },
+      {
+        "type": "file",
+        "name": "uael-teammember-social-icons"
+      },
+      {
+        "type": "file",
+        "name": "uael-social-share-icons-brands"
+      },
+      {
+        "type": "file",
+        "name": "uael-social-share-icons-fontawesome"
+      },
+      {
+        "type": "file",
+        "name": "uael-nav-menu-icons"
+      },
+      {
+        "type": "file",
+        "name": "e-shapes"
+      },
+      {
+        "type": "file",
+        "name": "elementor-post-138"
+      },
+      {
+        "type": "file",
+        "name": "elementor-post-43"
+      },
+      {
+        "type": "file",
+        "name": "elementor-post-45"
+      },
+      {
+        "type": "file",
+        "name": "eael-general"
+      },
+      {
+        "type": "file",
+        "name": "chld_thm_cfg_child"
+      },
+      {
+        "type": "file",
+        "name": "elementor-gf-oswald"
+      },
+      {
+        "type": "file",
+        "name": "elementor-gf-lato"
+      },
+      {
+        "type": "file",
+        "name": "elementor-icons-shared-0"
+      },
+      {
+        "type": "file",
+        "name": "elementor-icons-fa-brands"
+      },
+      {
+        "type": "file",
+        "name": "inline-anon-e13b03c5"
+      },
+      {
+        "type": "file",
+        "name": "inline-wp-custom-70b5e3e6"
+      }
+    ],
+    "favicons": [
+      {
+        "rel": "icon",
+        "href": "/wp-content/uploads/2024/03/logo-purple-background.svg",
+        "sizes": null,
+        "type": "image/png"
+      },
+      {
+        "rel": "icon",
+        "href": "/wp-content/uploads/2024/03/logo-purple-background.svg",
+        "sizes": "32x32",
+        "type": null
+      },
+      {
+        "rel": "icon",
+        "href": "/wp-content/uploads/2024/03/logo-purple-background.svg",
+        "sizes": "192x192",
+        "type": null
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "/wp-content/uploads/2024/03/logo-purple-background.svg",
+        "sizes": null,
+        "type": null
+      }
+    ],
+    "tile": "/wp-content/uploads/2024/03/logo-purple-background.svg",
+    "seoHead": ""
+  },
+  {
+    "slug": "work-book",
+    "path": "/work-book/",
+    "title": "Work Book – Meaning Is The Mission",
+    "description": null,
+    "robots": "noindex, nofollow",
+    "viewport": "width=device-width, initial-scale=1",
+    "hasProfileLink": true,
+    "hasCanonical": true,
+    "bodyClass": "wp-singular page-template page-template-elementor_header_footer page page-id-255 wp-custom-logo wp-embed-responsive wp-theme-hello-elementor wp-child-theme-hello-elementor-child hello-elementor-default elementor-default elementor-template-full-width elementor-kit-6 elementor-page elementor-page-255",
+    "lang": "en-US",
+    "hasSkipLink": true,
+    "header": "header-43-ce0a6a23",
+    "footer": "footer-45-faf9caa5",
+    "popups": [],
+    "content": "page-work-book",
+    "css": [
+      {
+        "type": "file",
+        "name": "inline-wp-img-auto-sizes-contain-inline-e30bfec6"
+      },
+      {
+        "type": "file",
+        "name": "inline-wp-emoji-styles-inline-32d8f52d"
+      },
+      {
+        "type": "file",
+        "name": "wpforms-gutenberg-form-selector"
+      },
+      {
+        "type": "file",
+        "name": "inline-global-styles-inline-cb0158d3"
+      },
+      {
+        "type": "file",
+        "name": "hello-elementor"
+      },
+      {
+        "type": "file",
+        "name": "hello-elementor-theme-style"
+      },
+      {
+        "type": "file",
+        "name": "hello-elementor-header-footer"
+      },
+      {
+        "type": "file",
+        "name": "elementor-frontend"
+      },
+      {
+        "type": "file",
+        "name": "elementor-post-6"
+      },
+      {
+        "type": "file",
+        "name": "widget-image"
+      },
+      {
+        "type": "file",
+        "name": "widget-nav-menu"
+      },
+      {
+        "type": "file",
+        "name": "e-sticky"
+      },
+      {
+        "type": "file",
+        "name": "widget-heading"
+      },
+      {
+        "type": "file",
+        "name": "widget-icon-list"
+      },
+      {
+        "type": "file",
+        "name": "e-animation-grow"
+      },
+      {
+        "type": "file",
+        "name": "widget-social-icons"
+      },
+      {
+        "type": "file",
+        "name": "e-apple-webkit"
+      },
+      {
+        "type": "file",
+        "name": "elementor-icons"
+      },
+      {
+        "type": "file",
+        "name": "uael-frontend"
+      },
+      {
+        "type": "file",
+        "name": "wpforms-full"
+      },
+      {
+        "type": "file",
+        "name": "uael-teammember-social-icons"
+      },
+      {
+        "type": "file",
+        "name": "uael-social-share-icons-brands"
+      },
+      {
+        "type": "file",
+        "name": "uael-social-share-icons-fontawesome"
+      },
+      {
+        "type": "file",
+        "name": "uael-nav-menu-icons"
+      },
+      {
+        "type": "file",
+        "name": "widget-icon-box"
+      },
+      {
+        "type": "file",
+        "name": "elementor-post-255"
+      },
+      {
+        "type": "file",
+        "name": "elementor-post-43"
+      },
+      {
+        "type": "file",
+        "name": "elementor-post-45"
+      },
+      {
+        "type": "file",
+        "name": "eael-general"
+      },
+      {
+        "type": "file",
+        "name": "chld_thm_cfg_child"
+      },
+      {
+        "type": "file",
+        "name": "elementor-gf-oswald"
+      },
+      {
+        "type": "file",
+        "name": "elementor-gf-lato"
+      },
+      {
+        "type": "file",
+        "name": "elementor-icons-shared-0"
+      },
+      {
+        "type": "file",
+        "name": "elementor-icons-fa-solid"
+      },
+      {
+        "type": "file",
+        "name": "elementor-icons-fa-brands"
+      },
+      {
+        "type": "file",
+        "name": "inline-anon-e13b03c5"
+      },
+      {
+        "type": "file",
+        "name": "inline-wp-custom-70b5e3e6"
+      }
+    ],
+    "favicons": [
+      {
+        "rel": "icon",
+        "href": "/wp-content/uploads/2024/03/logo-purple-background.svg",
+        "sizes": null,
+        "type": "image/png"
+      },
+      {
+        "rel": "icon",
+        "href": "/wp-content/uploads/2024/03/logo-purple-background.svg",
+        "sizes": "32x32",
+        "type": null
+      },
+      {
+        "rel": "icon",
+        "href": "/wp-content/uploads/2024/03/logo-purple-background.svg",
+        "sizes": "192x192",
+        "type": null
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "/wp-content/uploads/2024/03/logo-purple-background.svg",
+        "sizes": null,
+        "type": null
+      }
+    ],
+    "tile": "/wp-content/uploads/2024/03/logo-purple-background.svg",
+    "seoHead": ""
+  }
+]

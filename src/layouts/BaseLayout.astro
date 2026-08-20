@@ -1,0 +1,103 @@
+---
+/**
+ * Page shell for the cloned WordPress pages.
+ *
+ * The <head> reproduces the original's stylesheet cascade exactly: every handle the
+ * WordPress page linked, in the same order, served from public/wp/css/. Elementor's
+ * compiled per-post CSS is what makes the clone pixel-accurate, so it ships verbatim
+ * rather than being re-derived (playbook §2).
+ */
+import type { PageRecord } from '../lib/pages';
+import { fragment, chatWidgetHtml } from '../lib/pages';
+import PageContent from '../components/PageContent.astro';
+import OptInPopup from '../components/OptInPopup.astro';
+import { CHAT_WIDGET, NOINDEX, OPT_IN_POPUP } from '../config';
+import '../styles/global.css';
+
+interface Props {
+  page: PageRecord;
+}
+
+const { page } = Astro.props as Props;
+const site = Astro.site ?? new URL('https://meaningisthemission.com');
+const canonical = new URL(page.path, site).href;
+
+/**
+ * The kit's two families, both self-hosted by scripts/build-fonts.mjs. Preloaded in
+ * the weights that paint above the fold on every page: Oswald 600 (the kit's primary
+ * heading style, which the logo-line and every h1/h2 use), Oswald 400 (its secondary
+ * style, on the nav and buttons) and Lato 400 (body text).
+ */
+const PRELOAD_FONTS = [
+  '/wp/fonts/oswald-600-latin.woff2',
+  '/wp/fonts/oswald-400-latin.woff2',
+  '/wp/fonts/lato-400-latin.woff2',
+];
+
+const chat = CHAT_WIDGET ? chatWidgetHtml : '';
+---
+
+<!doctype html>
+<html lang={page.lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content={page.viewport} />
+    {page.hasProfileLink && <link rel="profile" href="https://gmpg.org/xfn/11" />}
+    {page.robots && NOINDEX && <meta name="robots" content={page.robots} />}
+    <title set:html={page.title} />
+    {page.description && <meta name="description" content={page.description} />}
+    {page.hasCanonical && <link rel="canonical" href={canonical} />}
+    <Fragment set:html={page.seoHead} />
+
+    {PRELOAD_FONTS.map((href) => (
+      <link rel="preload" as="font" type="font/woff2" href={href} crossorigin />
+    ))}
+
+    {page.css.map((sheet) => <link rel="stylesheet" href={`/wp/css/${sheet.name}.css`} />)}
+
+    {page.favicons.map((icon) => (
+      <link
+        rel={icon.rel}
+        href={icon.href}
+        {...(icon.sizes ? { sizes: icon.sizes } : {})}
+        {...(icon.type ? { type: icon.type } : {})}
+      />
+    ))}
+    {page.tile && <meta name="msapplication-TileImage" content={page.tile} />}
+
+    <slot name="head" />
+  </head>
+
+  <body class={page.bodyClass}>
+    {page.hasSkipLink && (
+      <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+    )}
+
+    {OPT_IN_POPUP && <OptInPopup />}
+
+    {page.header && <Fragment set:html={fragment(page.header)} />}
+
+    <slot>
+      <PageContent html={fragment(page.content)} />
+    </slot>
+
+    {page.footer && <Fragment set:html={fragment(page.footer)} />}
+
+    {/* Elementor Pro keeps a popup template out of the document until something
+        opens it — scripts/inspect-live.mjs finds zero `[data-elementor-type="popup"]`
+        nodes in the live post-init DOM, and the compiled CSS hides that attribute
+        anyway (playbook §3.12). A <template> is the same contract: inert markup that
+        is not in the document tree, which openPopup() clones into the dialog it
+        builds. /speaking/ is the only page with one, opened by its "Let's talk"
+        button. */}
+    {page.popups.map((name) => (
+      <template data-elementor-popup={name.split('-')[1]}>
+        <PageContent html={fragment(name)} region="popup" />
+      </template>
+    ))}
+
+    {chat && <Fragment set:html={chat} />}
+
+    <script src="../scripts/elementor.js"></script>
+  </body>
+</html>

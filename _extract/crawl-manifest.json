@@ -1,0 +1,73 @@
+[
+  {
+    "url": "https://meaningisthemission.com/",
+    "status": 200,
+    "finalUrl": "https://meaningisthemission.com/",
+    "slug": "index",
+    "redirect": false,
+    "fromRest": true
+  },
+  {
+    "url": "https://meaningisthemission.com/work-book/",
+    "status": 200,
+    "finalUrl": "https://meaningisthemission.com/work-book/",
+    "slug": "work-book",
+    "redirect": false,
+    "fromRest": true
+  },
+  {
+    "url": "https://meaningisthemission.com/speaking/",
+    "status": 200,
+    "finalUrl": "https://meaningisthemission.com/speaking/",
+    "slug": "speaking",
+    "redirect": false,
+    "fromRest": true
+  },
+  {
+    "url": "https://meaningisthemission.com/tools-sales-page/",
+    "status": 200,
+    "finalUrl": "https://meaningisthemission.com/tools-sales-page/",
+    "slug": "tools-sales-page",
+    "redirect": false,
+    "fromRest": true
+  },
+  {
+    "url": "https://meaningisthemission.com/terms-of-use/",
+    "status": 200,
+    "finalUrl": "https://meaningisthemission.com/terms-of-use/",
+    "slug": "terms-of-use",
+    "redirect": false,
+    "fromRest": true
+  },
+  {
+    "url": "https://meaningisthemission.com/privacy-policy/",
+    "status": 200,
+    "finalUrl": "https://meaningisthemission.com/privacy-policy/",
+    "slug": "privacy-policy",
+    "redirect": false,
+    "fromRest": true
+  },
+  {
+    "url": "https://meaningisthemission.com/category/uncategorized/",
+    "status": 200,
+    "finalUrl": "https://meaningisthemission.com/category/uncategorized/",
+    "slug": "category__uncategorized",
+    "redirect": false,
+    "fromRest": true
+  },
+  {
+    "url": "https://meaningisthemission.com/author/admin/",
+    "status": 200,
+    "finalUrl": "https://meaningisthemission.com/author/admin/",
+    "slug": "author__admin",
+    "redirect": false,
+    "fromRest": false
+  },
+  {
+    "url": "https://meaningisthemission.com/404/",
+    "status": 200,
+    "finalUrl": "https://meaningisthemission.com/404/",
+    "slug": "404",
+    "fromRest": false
+  }
+]

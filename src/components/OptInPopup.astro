@@ -1,0 +1,130 @@
+---
+/**
+ * The "Free Chapter Opt In" popup every page opens five seconds after load.
+ *
+ * On the WordPress site this is a LeadConnector ("Trustymail") iframe written into
+ * <head>, plus the loader script that turns it into an `.ep-overlay` popup. Two
+ * renderings, chosen by src/config.ts:
+ *
+ *   embed  — the original iframe and loader, byte-identical to production and in
+ *            the same place in the DOM (the parser moves both to the top of <body>,
+ *            because an <iframe> is not head content). This is what ships until a
+ *            Growthmap endpoint is configured, so a deploy before the endpoint
+ *            exists never replaces a working form with a dead one.
+ *   own    — our static form (playbook §4b) inside a popup shell that reproduces the
+ *            widget's behaviour: a centred 600px card over a dimmed backdrop, opened
+ *            after the widget's own `data-trigger-value` of five seconds, closed by
+ *            the ✕, the backdrop or Escape, and shown at most three times per
+ *            visitor — the widget's `deactivateAfter: 3`.
+ */
+import ContactForm from './ContactForm.astro';
+import { CONTACT_ENDPOINT, FORM_MODE } from '../config';
+import { optInHtml } from '../lib/pages';
+
+const useOwnForm = FORM_MODE === 'growthmap' && CONTACT_ENDPOINT !== '';
+
+/** The widget's own trigger and deactivation values, read off its data-attributes. */
+const DELAY_SECONDS = 5;
+const MAX_SHOWS = 3;
+
+// The markers extract.mjs wrapped the embed in are only needed to find it; the
+// fragment is emitted as authored.
+const embed = optInHtml.replace(/<!--gm-form:chapter:(start|end)-->/g, '');
+---
+
+{useOwnForm ? (
+  <div
+    class="gm-optin"
+    id="gm-optin"
+    hidden
+    data-delay={DELAY_SECONDS}
+    data-max-shows={MAX_SHOWS}
+  >
+    <div class="gm-optin__backdrop" data-close></div>
+    <div class="gm-optin__card" role="dialog" aria-modal="true" aria-labelledby="gm-opt-in-chapter-heading">
+      <button type="button" class="gm-optin__close" data-close aria-label="Close">&times;</button>
+      <ContactForm variant="chapter" region="opt-in" />
+    </div>
+  </div>
+) : (
+  <Fragment set:html={embed} />
+)}
+
+<style>
+  .gm-optin {
+    position: fixed;
+    inset: 0;
+    z-index: 100000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .gm-optin[hidden] { display: none; }
+
+  .gm-optin__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgb(15 46 77 / 0.6);
+  }
+
+  /* 600px is the width the widget's own popup container renders at. */
+  .gm-optin__card {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    max-height: calc(100vh - 40px);
+    overflow: auto;
+    background: #fff;
+    border-radius: 4px;
+  }
+
+  .gm-optin__close {
+    position: absolute;
+    top: 10px;
+    inset-inline-end: 10px;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    font-size: 24px;
+    line-height: 1;
+    color: #4a4a4a;
+    background: #e8e8e8;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .gm-optin__close:focus-visible { outline: 2px solid #0197ce; outline-offset: 2px; }
+</style>
+
+<script>
+  const popup = document.getElementById('gm-optin');
+  if (popup) {
+    const key = 'gm-optin-shows';
+    const maxShows = Number(popup.dataset.maxShows) || 3;
+    const shown = Number(localStorage.getItem(key) || '0');
+
+    const close = () => {
+      popup.hidden = true;
+      document.body.style.removeProperty('overflow');
+    };
+
+    if (shown < maxShows) {
+      setTimeout(() => {
+        popup.hidden = false;
+        document.body.style.overflow = 'hidden';
+        localStorage.setItem(key, String(shown + 1));
+        popup.querySelector<HTMLElement>('.gm-optin__close')?.focus();
+      }, (Number(popup.dataset.delay) || 5) * 1000);
+    }
+
+    for (const el of popup.querySelectorAll('[data-close]')) {
+      el.addEventListener('click', close);
+    }
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && !popup.hidden) close();
+    });
+  }
+</script>
