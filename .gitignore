@@ -18,6 +18,7 @@ node_modules/
 _extract/html/
 _extract/live-dom/
 
-# one-off comparison reports and probes
+# one-off comparison reports, probes and screenshots
 _extract/spot-*.json
 _extract/probe/
+_extract/shots/
