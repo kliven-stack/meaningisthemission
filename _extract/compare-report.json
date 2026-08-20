@@ -61,5 +61,131 @@
     "checked": 136,
     "diffs": [],
     "extra": []
+  },
+  {
+    "path": "/404/",
+    "width": 900,
+    "checked": 88,
+    "diffs": [],
+    "extra": []
+  },
+  {
+    "path": "/author/admin/",
+    "width": 900,
+    "checked": 88,
+    "diffs": [],
+    "extra": []
+  },
+  {
+    "path": "/category/uncategorized/",
+    "width": 900,
+    "checked": 88,
+    "diffs": [],
+    "extra": []
+  },
+  {
+    "path": "/",
+    "width": 900,
+    "checked": 237,
+    "diffs": [],
+    "extra": []
+  },
+  {
+    "path": "/privacy-policy/",
+    "width": 900,
+    "checked": 411,
+    "diffs": [],
+    "extra": []
+  },
+  {
+    "path": "/speaking/",
+    "width": 900,
+    "checked": 191,
+    "diffs": [],
+    "extra": []
+  },
+  {
+    "path": "/terms-of-use/",
+    "width": 900,
+    "checked": 292,
+    "diffs": [],
+    "extra": []
+  },
+  {
+    "path": "/tools-sales-page/",
+    "width": 900,
+    "checked": 168,
+    "diffs": [],
+    "extra": []
+  },
+  {
+    "path": "/work-book/",
+    "width": 900,
+    "checked": 136,
+    "diffs": [],
+    "extra": []
+  },
+  {
+    "path": "/404/",
+    "width": 390,
+    "checked": 88,
+    "diffs": [],
+    "extra": []
+  },
+  {
+    "path": "/author/admin/",
+    "width": 390,
+    "checked": 88,
+    "diffs": [],
+    "extra": []
+  },
+  {
+    "path": "/category/uncategorized/",
+    "width": 390,
+    "checked": 88,
+    "diffs": [],
+    "extra": []
+  },
+  {
+    "path": "/",
+    "width": 390,
+    "checked": 237,
+    "diffs": [],
+    "extra": []
+  },
+  {
+    "path": "/privacy-policy/",
+    "width": 390,
+    "checked": 411,
+    "diffs": [],
+    "extra": []
+  },
+  {
+    "path": "/speaking/",
+    "width": 390,
+    "checked": 191,
+    "diffs": [],
+    "extra": []
+  },
+  {
+    "path": "/terms-of-use/",
+    "width": 390,
+    "checked": 292,
+    "diffs": [],
+    "extra": []
+  },
+  {
+    "path": "/tools-sales-page/",
+    "width": 390,
+    "checked": 168,
+    "diffs": [],
+    "extra": []
+  },
+  {
+    "path": "/work-book/",
+    "width": 390,
+    "checked": 136,
+    "diffs": [],
+    "extra": []
   }
 ]

@@ -141,10 +141,18 @@ function initSticky() {
   }
 }
 
-/** Height of whatever sticky header is currently pinned, for anchor offsets. */
-const stickyHeight = () => {
+/**
+ * How far above an anchor target Elementor stops scrolling.
+ *
+ * Not the pinned header's height: it is the sticky section's own
+ * `sticky_anchor_link_offset`, which is 0 here. Production lands with the target's
+ * top exactly at the viewport top — under the 101px header — and the clone does the
+ * same. That is an original-site bug, cloned faithfully and flagged in the README;
+ * setting the offset in Elementor is the one-field fix.
+ */
+const anchorOffset = () => {
   const pinned = document.querySelector('.elementor-sticky--active');
-  return pinned ? pinned.getBoundingClientRect().height : 0;
+  return pinned ? Number(settingsOf(pinned).sticky_anchor_link_offset) || 0 : 0;
 };
 
 /* ------------------------------------------------------------------ *
@@ -239,7 +247,7 @@ function initAnchors() {
     if (!target) return;
 
     event.preventDefault();
-    const top = target.getBoundingClientRect().top + window.scrollY - stickyHeight();
+    const top = target.getBoundingClientRect().top + window.scrollY - anchorOffset();
     window.scrollTo({ top, behavior: reduceMotion ? 'auto' : 'smooth' });
     history.pushState(null, '', url.hash);
   });

@@ -150,20 +150,22 @@ const id = (name: string) => `gm-${region}-${variant}-${name}`;
 </div>
 
 <style>
-  /* Geometry copied from the widgets: 41px field rows (45px for the phone row) with
-     a 16px gap, 10px/20px insets, 2px radii on the fields and 4px on the button,
-     Montserrat 14px for the inputs. Both widgets paint their own background, so the
-     form fills the box the popup gives it. */
+  /* Geometry and type copied from the widgets: 41px field rows with a 16px gap,
+     10px/20px insets, 2px radii on the fields and 4px on the button, Montserrat 14px
+     for the inputs, Open Sans 18px/27px centred and white for the copy above them.
+     Both widgets sit on a dark ground the page paints behind them — the Elementor
+     popup's purple for `speaking`, the theme's navy gradient for `chapter` — so the
+     form is transparent and fills the box it is given. */
   .gm-form {
     box-sizing: border-box;
     width: 100%;
     padding: 30px 20px;
     font-family: 'Montserrat', 'Lato', sans-serif;
-    color: #2f2e2e;
+    color: #fff;
   }
 
-  /* The speaking widget is 980px wide inside a 1000px popup container; the opt-in
-     popup is 600px wide. Both centre their column. */
+  /* Column widths measured off the widgets: 738px inside the 980px speaking popup,
+     576px inside the 600px opt-in one. */
   .gm-form--speaking .gm-form__form { max-width: 738px; }
   .gm-form--chapter .gm-form__form { max-width: 576px; }
   .gm-form__form { box-sizing: border-box; margin: 0 auto; }
@@ -171,26 +173,24 @@ const id = (name: string) => `gm-${region}-${variant}-${name}`;
   .gm-form__kicker {
     margin: 0 0 4px;
     font-family: 'Oswald', sans-serif;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 500;
     letter-spacing: 0.08em;
+    text-align: center;
     text-transform: uppercase;
-    color: #0197ce;
   }
 
-  .gm-form__heading {
-    margin: 0 0 8px;
-    font-family: 'Oswald', sans-serif;
-    font-size: 28px;
-    font-weight: 600;
-    line-height: 1.2;
-  }
-
+  .gm-form__heading,
   .gm-form__intro {
-    margin: 0 0 24px;
-    font-size: 15px;
-    line-height: 1.5;
+    margin: 0 0 8px;
+    font-family: 'Open Sans', 'Lato', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    text-align: center;
   }
+
+  .gm-form__intro { margin-bottom: 24px; }
 
   .gm-form__field { margin-bottom: 16px; }
 
@@ -228,9 +228,11 @@ const id = (name: string) => `gm-${region}-${variant}-${name}`;
     opacity: 1;
   }
 
-  /* The widget draws a mail glyph inside the email field and pads the text past it. */
-  .gm-form__input--mail {
-    padding-left: 36px !important;
+  /* The widget draws a mail glyph inside the email field and pads the text past it.
+     Selector specificity has to beat the `background` shorthand above, which would
+     otherwise reset this image to none. */
+  .gm-form__form input.gm-form__input--mail {
+    padding-left: 36px;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='4' width='20' height='16' rx='2'/%3E%3Cpath d='m22 7-10 6L2 7'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: 12px center;
@@ -317,11 +319,11 @@ const id = (name: string) => `gm-${region}-${variant}-${name}`;
     margin: 12px 0 0;
     min-height: 1.4em;
     font-size: 14px;
-    color: inherit;
+    text-align: center;
   }
 
-  .gm-form__status[data-state='error'] { color: #851577; }
-  .gm-form__status[data-state='ok'] { color: #2f7d4f; }
+  .gm-form__status[data-state='error'] { color: #ffc9f3; }
+  .gm-form__status[data-state='ok'] { color: #9de8bd; }
 </style>
 
 <script>

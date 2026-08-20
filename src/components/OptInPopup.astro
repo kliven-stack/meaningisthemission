@@ -12,10 +12,18 @@
  *            Growthmap endpoint is configured, so a deploy before the endpoint
  *            exists never replaces a working form with a dead one.
  *   own    — our static form (playbook §4b) inside a popup shell that reproduces the
- *            widget's behaviour: a centred 600px card over a dimmed backdrop, opened
- *            after the widget's own `data-trigger-value` of five seconds, closed by
- *            the ✕, the backdrop or Escape, and shown at most three times per
- *            visitor — the widget's `deactivateAfter: 3`.
+ *            widget's behaviour and the look the theme's own CSS gives it: a
+ *            full-viewport navy gradient with the form centred in a 600px column,
+ *            a round ✕ pinned 2% from the top right, opened after the widget's own
+ *            `data-trigger-value` of five seconds, closed by the ✕, the backdrop or
+ *            Escape, and shown at most three times per visitor — the widget's
+ *            `deactivateAfter: 3`.
+ *
+ *            The gradient is the one the theme writes for `.ep-iFrameContainer
+ *            .ep-popup`. Its second background layer, an image, is dropped: that
+ *            URL is pasted over itself in the WordPress custom CSS and 404s there
+ *            too, so the gradient is all production has ever shown (see the
+ *            README's "Original-site bugs").
  */
 import ContactForm from './ContactForm.astro';
 import { CONTACT_ENDPOINT, FORM_MODE } from '../config';
@@ -41,8 +49,8 @@ const embed = optInHtml.replace(/<!--gm-form:chapter:(start|end)-->/g, '');
     data-max-shows={MAX_SHOWS}
   >
     <div class="gm-optin__backdrop" data-close></div>
+    <button type="button" class="gm-optin__close" data-close aria-label="Close">&times;</button>
     <div class="gm-optin__card" role="dialog" aria-modal="true" aria-labelledby="gm-opt-in-chapter-heading">
-      <button type="button" class="gm-optin__close" data-close aria-label="Close">&times;</button>
       <ContactForm variant="chapter" region="opt-in" />
     </div>
   </div>
@@ -58,7 +66,12 @@ const embed = optInHtml.replace(/<!--gm-form:chapter:(start|end)-->/g, '');
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+  }
+
+  /* The theme drops the vertical centring at mobile, where the form is taller than
+     the viewport and centring would cut off its head. */
+  @media screen and (max-width: 767px) {
+    .gm-optin { align-items: flex-start; overflow: auto; }
   }
 
   .gm-optin[hidden] { display: none; }
@@ -66,28 +79,28 @@ const embed = optInHtml.replace(/<!--gm-form:chapter:(start|end)-->/g, '');
   .gm-optin__backdrop {
     position: absolute;
     inset: 0;
-    background: rgb(15 46 77 / 0.6);
+    background: linear-gradient(90deg, rgb(7 23 41) 0%, #071729f5 100%);
   }
 
-  /* 600px is the width the widget's own popup container renders at. */
+  /* 600px is the width the widget's own popup column renders at. */
   .gm-optin__card {
     position: relative;
     width: 100%;
     max-width: 600px;
-    max-height: calc(100vh - 40px);
+    max-height: 100%;
     overflow: auto;
-    background: #fff;
-    border-radius: 4px;
   }
 
+  /* The theme pins the widget's close control 2% from the top right of the overlay
+     and draws it as a 30px circle. */
   .gm-optin__close {
     position: absolute;
-    top: 10px;
-    inset-inline-end: 10px;
-    width: 32px;
-    height: 32px;
+    top: 2%;
+    inset-inline-end: 2%;
+    width: 30px;
+    height: 30px;
     padding: 0;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 1;
     color: #4a4a4a;
     background: #e8e8e8;

@@ -34,13 +34,15 @@ const KEEP_SUBSETS = new Set(['latin', 'latin-ext']);
 /**
  * Families the WordPress pages do not link, but our own components need.
  *
- * Montserrat is the face the two LeadConnector widgets render their fields in.
- * ContactForm.astro replaces those widgets with our own markup in the page rather
- * than in an iframe, so the family has to be self-hosted here for the replacement
- * to keep the type it is replacing.
+ * Montserrat is the face the two LeadConnector widgets render their fields in, and
+ * Open Sans the one they set their headings in. ContactForm.astro replaces those
+ * widgets with our own markup in the page rather than in an iframe, so both have to
+ * be self-hosted here for the replacement to keep the type it is replacing — and so
+ * that swapping the widgets out also drops their calls to fonts.gstatic.com.
  */
 const EXTRA_FAMILIES = {
   'gm-montserrat': 'https://fonts.googleapis.com/css?family=Montserrat:400,600&display=auto',
+  'gm-opensans': 'https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=auto',
 };
 
 await mkdir(FONTS, { recursive: true });
