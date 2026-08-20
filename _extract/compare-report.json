@@ -1,0 +1,65 @@
+[
+  {
+    "path": "/404/",
+    "width": 1440,
+    "checked": 88,
+    "diffs": [],
+    "extra": []
+  },
+  {
+    "path": "/author/admin/",
+    "width": 1440,
+    "checked": 88,
+    "diffs": [],
+    "extra": []
+  },
+  {
+    "path": "/category/uncategorized/",
+    "width": 1440,
+    "checked": 88,
+    "diffs": [],
+    "extra": []
+  },
+  {
+    "path": "/",
+    "width": 1440,
+    "checked": 237,
+    "diffs": [],
+    "extra": []
+  },
+  {
+    "path": "/privacy-policy/",
+    "width": 1440,
+    "checked": 411,
+    "diffs": [],
+    "extra": []
+  },
+  {
+    "path": "/speaking/",
+    "width": 1440,
+    "checked": 191,
+    "diffs": [],
+    "extra": []
+  },
+  {
+    "path": "/terms-of-use/",
+    "width": 1440,
+    "checked": 292,
+    "diffs": [],
+    "extra": []
+  },
+  {
+    "path": "/tools-sales-page/",
+    "width": 1440,
+    "checked": 168,
+    "diffs": [],
+    "extra": []
+  },
+  {
+    "path": "/work-book/",
+    "width": 1440,
+    "checked": 136,
+    "diffs": [],
+    "extra": []
+  }
+]

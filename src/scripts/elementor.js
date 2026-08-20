@@ -46,6 +46,26 @@ function initEnvironment() {
   for (const [key, on] of Object.entries(flags)) {
     if (on) document.body.classList.add(`e--ua-${key}`);
   }
+
+  // Two inert nodes Elementor's frontend appends to <body>, in this order, and the
+  // last two elements in production's DOM:
+  //
+  //   * `#elementor-device-mode` — a screen-only span whose `::after` content the
+  //     compiled CSS sets per breakpoint ("desktop", "tablet", "mobile", …). It is
+  //     how Elementor reads the active device mode back out of its own stylesheet,
+  //     so anything that later asks the same question gets the same answer here.
+  //   * `.e-font-icon-svg-symbols` — the sprite Elementor fills with <symbol> defs
+  //     for inline SVG icons. It stays empty on this site, whose icons are all
+  //     font-based, and it is `display: none` either way.
+  const deviceMode = document.createElement('span');
+  deviceMode.id = 'elementor-device-mode';
+  deviceMode.className = 'elementor-screen-only';
+  document.body.append(deviceMode);
+
+  const symbols = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  symbols.setAttribute('style', 'display: none;');
+  symbols.setAttribute('class', 'e-font-icon-svg-symbols');
+  document.body.append(symbols);
 }
 
 /* ------------------------------------------------------------------ *

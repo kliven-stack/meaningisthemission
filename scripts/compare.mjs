@@ -68,7 +68,13 @@ const PROBE = () => {
   // posts, the category archive, and the four pages that use the Hello template)
   // carry none, so those would otherwise be compared as an empty box. Sweep their
   // leaves by document order instead — that is where their text and typography are.
-  const LEAVES = 'h1, h2, h3, h4, h5, h6, p, li, a, img, blockquote, time, .entry-title, .page-header, .page-content, .comments-area, .comment-body, .nav-links';
+  // Elementor's own elements all carry a data-id, so this sweep is about everything
+  // inside them: the text nodes, the icons, the button and menu chrome, and the
+  // theme-rendered pages (the two archives and the 404 template) whose markup
+  // carries no data-id at all and would otherwise be compared as an empty box.
+  const LEAVES = 'h1, h2, h3, h4, h5, h6, p, li, a, img, svg, i, span, button, figure, blockquote, time, hr,'
+    + ' nav, ul, ol, .elementor-widget-container, .elementor-button-content-wrapper, .elementor-icon,'
+    + ' .entry-title, .page-header, .page-content, .comments-area, .comment-body, .nav-links';
   document.querySelectorAll(LEAVES).forEach((el, i) => {
     if (el.closest('.swiper-slide-duplicate') || el.closest('.elementor-sticky__spacer')) return;
     push(`leaf:${i}:${el.tagName.toLowerCase()}`, el);
@@ -80,12 +86,10 @@ const PROBE = () => {
       (el instanceof HTMLElement ? el.innerText : el.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 80);
   });
 
-  for (const sel of ['body', 'header.elementor-location-header', 'footer.elementor-location-footer', 'main#content', '[data-elementor-type="wp-page"]', '[data-elementor-type="single-post"]', '[data-elementor-type="archive"]',
-    // The container is CSS-sized, so it is comparable here. The <video> inside it is
-    // not: this run blocks media on both sides, and production only sizes its player
-    // once the file loads. That geometry is checked by scripts/compare-video.mjs,
-    // which loads the videos for real.
-    '.elementor-background-video-container']) {
+  for (const sel of ['body', 'header.elementor-location-header', 'footer.elementor-location-footer',
+    'main#content', '[data-elementor-type="wp-page"]',
+    '.eael-testimonial-slider-main', '.eael-testimonial-slider-main .swiper-wrapper',
+    '.eael-testimonial-slider-main .swiper-slide-active']) {
     const el = document.querySelector(sel);
     if (el) push(`sel:${sel}`, el);
   }
@@ -103,18 +107,17 @@ for (const width of widths) {
   await ctx.route('**/*.{mp4,mov,webm}', (r) => r.abort());
   await ctx.route('**://*.googletagmanager.com/**', (r) => r.abort());
   await ctx.route('**://*.google-analytics.com/**', (r) => r.abort());
-  // The LeadConnector widgets render differently run to run and their host resets
-  // headless traffic at random, so both the forms and the chat bubble are blocked on
-  // both sides. The iframe boxes themselves are sized by the page's own CSS, so the
-  // geometry stays comparable — and while no Growthmap endpoint is configured both
-  // sides serve those same iframes anyway.
-  // KEEP_EMBEDS=1 lets the lead widgets load on both sides, to check the geometry
-  // they actually produce. Off by default: the host resets headless traffic at
-  // random, so a run that keeps them is only meaningful when it succeeds.
+  // The LeadConnector embeds are blocked on both sides. The "Free Chapter Opt In"
+  // popup is the reason this matters: it covers the viewport five seconds after
+  // load, and whether it has arrived yet would decide every measurement below. Its
+  // own box is fixed-position and takes nothing out of the page's flow, so blocking
+  // it costs the comparison nothing. Same for the chat bubble.
+  // KEEP_EMBEDS=1 lets them load on both sides, to check the geometry they actually
+  // produce. Off by default: the host resets headless traffic at random, so a run
+  // that keeps them is only meaningful when it succeeds.
   if (!process.env.KEEP_EMBEDS) await ctx.route('**://verified.trustymail.co/**', (r) => r.abort());
   await ctx.route('**://*.leadconnectorhq.com/**', (r) => r.abort());
-  await ctx.route('**://links.sybrware.com/**', (r) => r.abort());
-  await ctx.route('**://*.googleapis.com/**', (r) => r.abort());
+  await ctx.route('**://firebasestorage.googleapis.com/**', (r) => r.abort());
 
   for (const page of targets) {
     const measure = async (origin) => {
@@ -130,12 +133,13 @@ for (const width of widths) {
         await tab.waitForTimeout(1200);
         await tab.evaluate(() => window.scrollTo(0, 0));
         await tab.waitForTimeout(800);
-        // Carousels autoplay on both sides; pin them to the first slide last of all
-        // so the geometry diff is deterministic. Production runs real Swiper, the
-        // clone runs the reimplementation in src/scripts/elementor.js — both are
-        // asked for loop index 0 with no transition.
+        // The testimonial slider never advances on its own (its autoplay delay is
+        // the bundle's 999999ms fallback), but pin it to the first slide anyway so
+        // a stray interaction cannot make the geometry diff non-deterministic.
+        // Production runs real Swiper, the clone runs the reimplementation in
+        // src/scripts/elementor.js — both are asked for loop index 0, no transition.
         await tab.evaluate(() => {
-          for (const el of document.querySelectorAll('.elementor-main-swiper, .e-n-carousel')) {
+          for (const el of document.querySelectorAll('.eael-testimonial-slider-main')) {
             if (el.swiper) { el.swiper.autoplay?.stop(); el.swiper.slideToLoop(0, 0); }
             else if (el.eCarousel) el.eCarousel.reset();
           }
